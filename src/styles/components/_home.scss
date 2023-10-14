@@ -1,0 +1,169 @@
+.titre {
+  color: red;
+}
+
+#home {
+  width: 100vw;
+  height: 100vh;
+  background: url(../../assets/img/home_background.jpg) center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#presentation-container {
+  width: 70%;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  border-radius: 2rem;
+  color: white;
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+
+#presentation-container > * {
+  width: 50%;
+}
+
+#presentation-container .right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#home h1 {
+  letter-spacing: 0.1em;
+  font-weight: bold;
+  font-family: "Lumanosimo", cursive;
+  cursor: default;
+  animation: fadeUp 0.5s ease-in-out;
+}
+
+@keyframes fadeUp {
+  0% {
+    transform: translateY(40%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+#presentation-container .catchphrase {
+  text-align: justify;
+  opacity: 0;
+  font-size: 1.2rem;
+  animation: fadeUp 0.5s ease-in-out 0.2s forwards;
+}
+
+#explore-btn {
+  background-color: white;
+  color: rgb(219, 13, 13);
+  border: none;
+  // border: 2px solid white;
+  text-align: center;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 10px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: all 0.3s ease-in-out;
+  animation: buttonShake 5s ease-in-out infinite; /* Ajoutez cette ligne pour les deux animations */
+}
+
+#explore-btn:hover {
+  background-color: rgb(230, 230, 230);
+  // border-color: whitesmoke;
+  transform: translateY(-5%);
+  transition: all 0.3s ease-in-out;
+  animation-play-state: paused;
+  // animation: buttonShake 1000s ease-in-out infinite;
+}
+
+@keyframes buttonShake {
+  0% {
+    transform: scale(1) rotate(0deg); /* État initial */
+  }
+  2% {
+    transform: scale(1.1) rotate(5deg);
+  }
+  5% {
+    transform: scale(1.1) rotate(-5deg);
+  }
+  8% {
+    transform: scale(1.1) rotate(5deg);
+  }
+  12% {
+    transform: scale(1.1) rotate(-5deg);
+  }
+  15% {
+    transform: scale(1) rotate(0deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg); /* État final, le même que l'état initial */
+  }
+}
+
+// @keyframes delayShake {
+//   0%,
+//   100% {
+//     transform: translateY(0);
+//   }
+//   50% {
+//     transform: translateY(-5px);
+//   }
+// }
+
+#explore-btn::after {
+  content: " >>";
+  margin-left: 0.5rem;
+  transition: all 0.3s ease-in-out;
+}
+
+#explore-btn:hover::after {
+  margin-left: 1rem;
+  transition: all 0.3s ease-in-out;
+}
+
+#presentation-container .img-container {
+  border-radius: 1rem;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  width: 50%;
+}
+
+#daily-img {
+  width: 100%;
+  border-radius: 1rem;
+  transition: all 0.3s ease-in-out;
+}
+
+#daily-img:hover {
+  scale: 1.05;
+  transition: all 0.3s ease-in-out;
+}
+
+.global-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh; /* Assure que la vidéo occupe toute la hauteur de la fenêtre */
+  overflow: hidden; /* Cache les parties de la vidéo qui dépassent de la fenêtre */
+}
+
+.video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Étire la vidéo pour couvrir tout le conteneur */
+  z-index: 0; /* Place la vidéo derrière le contenu */
+}

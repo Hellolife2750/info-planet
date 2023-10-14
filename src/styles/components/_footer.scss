@@ -1,0 +1,39 @@
+#footer {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  display: flex;
+  justify-content: center;
+}
+
+#footer .centered {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+}
+
+ul {
+  list-style-type: none;
+  display: flex;
+}
+
+ul a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.5rem;
+  margin-left: 1rem;
+
+  transition: all 0.3s ease-in-out 0.2s;
+}
+
+ul a:hover {
+  //   color: rgb(219, 13, 13);
+  scale: 1.2;
+  transition: all 0.3s ease-in-out;
+}

@@ -1,0 +1,41 @@
+#planet-card .card-title {
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: bold;
+  //   margin: 0;
+  //margin-bottom: 1rem;
+}
+
+#planet-card .planet-type,
+#planet-card .discovery-date {
+  margin-bottom: 0;
+}
+
+#planet-card {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  border-radius: 1.8rem;
+  color: white;
+  margin-top: 2rem;
+  width: 21%;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+}
+
+#planet-card:hover {
+  scale: 0.98;
+}
+
+#planet-img {
+  width: 100%;
+  border-radius: 1rem;
+}

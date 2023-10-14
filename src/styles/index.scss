@@ -1,0 +1,15 @@
+@import "./components/home";
+@import "./components/header";
+@import "./components/footer";
+@import "./components/search";
+@import "./components/card";
+@import "./components/simulation";
+@import "./components/filter";
+
+body {
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+}

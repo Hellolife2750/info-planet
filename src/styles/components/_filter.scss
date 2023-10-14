@@ -1,0 +1,95 @@
+#filter {
+  position: fixed;
+  top: 50vh;
+  left: 50vw;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  width: 50%;
+  border-radius: 1.8rem;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 1rem;
+}
+
+#filter > * {
+  width: 50%;
+}
+
+#filter h3 {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+#filter hr {
+  width: 80%;
+  height: 3px;
+  color: white;
+  background-color: white;
+  //animation: barExtend 2s ease-in-out infinite;
+  animation: barExtend2 5s ease-in-out infinite;
+}
+
+@keyframes barExtend {
+  0% {
+    width: 80%;
+  }
+  25% {
+    width: 65%;
+  }
+  50% {
+    width: 45%;
+  }
+  70% {
+    width: 65%;
+  }
+  100% {
+    width: 80%;
+  }
+}
+
+@keyframes barExtend2 {
+  0% {
+    width: 80%;
+  }
+  50% {
+    width: 0%;
+  }
+}
+
+#filter .row {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+#filter label {
+  font-size: 1.2rem;
+}
+
+#filter .order ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+}
+
+#filter .order li {
+  display: flex;
+}
+
+#filters-background {
+  position: fixed;
+  z-index: 1;
+  width: 100vw;
+  height: 100vh;
+  background-color: whitesmoke;
+  opacity: 0.2;
+}
