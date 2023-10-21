@@ -11,7 +11,7 @@ const Home = () => {
   const [apodData, setApodData] = useState();
 
   useEffect(() => {
-    console.log(apiKey);
+    //console.log(apiKey);
     axios
       .get(`https://api.nasa.gov/planetary/apod?api_key=${apiKey}`)
       .then((res) => setApodData(res.data));

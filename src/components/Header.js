@@ -9,22 +9,26 @@ const Header = () => {
           <img className="logo" src="./logo.png" alt="logo infoplanet" />
         </NavLink>
         <ul className="navbar">
-          <NavLink to="/search">
+          <NavLink className="no-style" to="/search">
             <li>
               <i className="fa-solid fa-magnifying-glass"></i>
             </li>
           </NavLink>
 
-          <NavLink to="/">
+          <NavLink className="no-style" to="/solar-system">
             <li>Système solaire</li>
           </NavLink>
 
-          <li>Exoplanètes</li>
+          <NavLink className="no-style" to="/comparison">
+            <li>Comparer</li>
+          </NavLink>
+
+          {/* <li>Exoplanètes</li>
           <li>Lunes</li>
 
-          <NavLink to="/simulation">
+          <NavLink className="no-style" to="/simulation">
             <li>Simulation</li>
-          </NavLink>
+          </NavLink> */}
         </ul>
       </div>
     </div>
