@@ -4,11 +4,11 @@ const DetailedCard = ({ thePlanet }) => {
 
     //const caracteristics = [`<i class="fa-solid fa-arrows-left-right-to-line"></i> Distance du soleil : ${thePlanet.distance_moyenne_average_distance_x10_6_km}`];
 
-    function getValueOrZero(val) {
+    const getValueOrZero = (val) => {
         return val == null ? 0 : val;
     }
 
-    function getFrenchName(name) {
+    const getFrenchName = (name) => {
         const words = name.split('/');
         return words.length === 1 ? name.trim() : words[1].trim();;
     }

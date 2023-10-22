@@ -2,7 +2,8 @@
     width: 100vw;
     min-height: 100vh;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 #comparison .back-img {
@@ -13,4 +14,96 @@
     width: 100vw;
     height: 100vh;
     background: url(../../assets/img/home_background.jpg) center/cover;
+}
+
+#comparison-container {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    background: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    border-radius: 1.8rem;
+    color: white;
+    margin-bottom: 2rem;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+#comparison .compare-btn {
+    background: rgba(0, 0, 0, 0.2);
+    outline: none;
+    border: none;
+    color: white;
+    font-size: 1.3rem;
+    border-radius: .5rem;
+    text-transform: uppercase;
+    padding: .5rem 1rem .5rem 1rem;
+    cursor: pointer;
+
+    transition: all 0.3s ease-in-out;
+}
+
+#comparison .compare-btn:hover {
+    background: rgba(0, 0, 0, 0.35);
+    color: whitesmoke;
+
+    //   transition: all 0.3s ease-in-out;
+
+}
+
+#comparison .criteria-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+}
+
+#comparison .criteria-container .up {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 60%;
+    margin-bottom: 1rem;
+}
+
+#comparison select {
+    background: rgba(0, 0, 0, 0.2);
+    color: white;
+    outline: none;
+    border: none;
+    padding: .5rem 1rem .5rem 1rem;
+    border-radius: .5rem;
+}
+
+#comparison select option {
+    background-color: rgb(65, 62, 62);
+}
+
+#comparison .graphic-container {
+    margin-top: 2rem;
+    width: 25%;
+    min-height: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+#comparison .graphic-container .indicator-figure {
+    border-radius: 100%;
+    width: 100%;
+    padding-top: 50%;
+}
+
+#comparison .graphic-container .min {
+    background-color: rgb(166, 121, 38);
+}
+
+#comparison .graphic-container .max {
+    background-color: rgb(166, 61, 38);
 }
