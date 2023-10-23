@@ -1,7 +1,7 @@
 import { React, useEffect, useState, useRef } from 'react';
 import Header from '../components/Header';
 import axios from 'axios';
-import { getValueOrZero, getFrenchName } from '../Utils';
+import { getFrenchName } from '../Utils';
 
 const Comparison = () => {
 
@@ -21,11 +21,13 @@ const Comparison = () => {
     const indicator2 = useRef(null);
 
     useEffect(() => {
+
         axios
             .get("https://www.datastro.eu/api/explore/v2.1/catalog/datasets/donnees-systeme-solaire-solar-system-data/records?limit=20")
             .then((res) => setPlanetsData(res.data.results));
-        console.log(planetsData)
     }, []);
+
+
 
     /*const getValueForPlanet = (planetName, criteriaName) => {
         let val = -1;
@@ -41,10 +43,20 @@ const Comparison = () => {
         return val;
     }*/
 
+    const extractNumericValue = (criteria) => {
+        const numericValue = parseFloat(criteria.match(/\d+(\.\d+)?/));
+
+        if (!isNaN(numericValue) && isFinite(numericValue)) {
+            return numericValue;
+        } else {
+            return -1;
+        }
+    };
+
     const getValueForPlanet = (planetName, criteriaName) => {
         for (const planet of planetsData) {
             if (planet.planete_planet.includes(planetName)) {
-                return planet[criteriaName];
+                return criteriaName === "periode_de_rotation_rotation_period_h" ? extractNumericValue(planet[criteriaName]) : planet[criteriaName];
             }
         }
         return -1;
@@ -54,13 +66,27 @@ const Comparison = () => {
     const generateGraphic = () => {
         let planet1Value = getValueForPlanet(selectedDatas[0], comparisonCriterias[selectedDatas[2]]);
         let planet2Value = getValueForPlanet(selectedDatas[1], comparisonCriterias[selectedDatas[2]]);
-        console.log(planet1Value)
-        console.log(planet2Value)
 
         let maxValue = Math.max(planet1Value, planet2Value);
 
-        indicator1.current.style.width = `${(planet1Value * maxValue) / 100}%`;
-        indicator2.current.style.width = `${(planet2Value * maxValue) / 100}%`;
+        if (planet2Value < planet1Value) {
+            indicator1.current.style.zIndex = "1";
+            indicator2.current.style.zIndex = "2";
+        } else {
+            indicator1.current.style.zIndex = "2"
+            indicator2.current.style.zIndex = "1"
+        }
+        indicator1.current.style.display = "block";
+        indicator2.current.style.display = "block"
+
+
+        indicator1.current.style.width = `${(planet1Value * 100) / maxValue}%`;
+        indicator1.current.style.height = `${indicator1.current.getBoundingClientRect().width}px`;
+        indicator1.current.style.setProperty('--content-before', "'" + selectedDatas[0] + "'");
+
+        indicator2.current.style.width = `${(planet2Value * 100) / maxValue}%`;
+        indicator2.current.style.height = `${indicator2.current.getBoundingClientRect().width}px`;
+        indicator2.current.style.setProperty('--content-before', "'" + selectedDatas[1] + "'");
     }
 
     return (

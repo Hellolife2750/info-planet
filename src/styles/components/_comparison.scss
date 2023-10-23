@@ -86,8 +86,11 @@
 
 #comparison .graphic-container {
     margin-top: 2rem;
+    margin-bottom: 1rem;
     width: 25%;
-    min-height: 10rem;
+    min-height: 20rem;
+    // width: 20vw;
+    // height: 20vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -97,13 +100,27 @@
 #comparison .graphic-container .indicator-figure {
     border-radius: 100%;
     width: 100%;
-    padding-top: 50%;
+    height: 100%;
+    position: absolute;
+    // padding-top: 50%;
 }
 
 #comparison .graphic-container .min {
-    background-color: rgb(166, 121, 38);
+    //background-color: rgb(166, 121, 38);
+    border: 1px dashed whitesmoke;
+    display: none;
 }
 
 #comparison .graphic-container .max {
-    background-color: rgb(166, 61, 38);
+    //background-color: rgb(166, 61, 38);
+    border: 1px dashed whitesmoke;
+    display: none;
+}
+
+#comparison .graphic-container .min::before {
+    content: var(--content-before, "Planète");
+}
+
+#comparison .graphic-container .max::before {
+    content: var(--content-before, "Planète");
 }
