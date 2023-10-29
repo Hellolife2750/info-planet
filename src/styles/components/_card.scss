@@ -39,3 +39,17 @@
   width: 100%;
   border-radius: 1rem;
 }
+
+@media (max-width: 1000px) {
+  #planet-card {
+    width: 45%;
+  }
+
+}
+
+@media (max-width: 700px) {
+  #planet-card {
+    width: 80%;
+  }
+
+}

@@ -57,3 +57,20 @@
     justify-content: space-between;
     align-items: center;
 }
+
+@media (max-width: 1000px) {
+    #detailed-card .caracs-container {
+        flex-direction: column;
+    }
+
+}
+
+@media (max-width: 700px) {
+    #detailed-card {
+        flex-direction: column;
+    }
+
+    #detailed-card .left {
+        width: 50%;
+    }
+}
