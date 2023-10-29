@@ -3,8 +3,8 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
-import Planets from "../components/Planets";
 import { NavLink } from "react-router-dom";
+import homeBackVid from "../assets/img/home_background_video2.mp4"
 
 const Home = () => {
   const apiKey = process.env.REACT_APP_NASA_API_KEY;
@@ -15,7 +15,7 @@ const Home = () => {
     axios
       .get(`https://api.nasa.gov/planetary/apod?api_key=${apiKey}`)
       .then((res) => setApodData(res.data));
-  }, []);
+  },);
 
   return (
     <div id="home">
@@ -23,7 +23,8 @@ const Home = () => {
 
       <div className="global-container">
         <video className="video-background" autoPlay loop muted>
-          <source src="./home_background_video2.mp4" type="video/mp4" />
+          {/* <source src="./home_background_video2.mp4" type="video/mp4" /> */}
+          <source src={homeBackVid} type="video/mp4" />
         </video>
       </div>
 
